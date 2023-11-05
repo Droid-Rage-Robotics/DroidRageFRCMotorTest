@@ -41,7 +41,7 @@ public class SetPowerTalonFX extends SubsystemBase {
 
     public CommandBase setPowerCommand(double power) {
         return runOnce(()->{
-            motor.setPower(power);
+            setPower(power);
 
         });
         

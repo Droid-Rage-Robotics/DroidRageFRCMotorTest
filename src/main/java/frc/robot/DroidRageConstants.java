@@ -1,11 +1,11 @@
 package frc.robot;
 
 public final class DroidRageConstants {
-    public static class Gamepad {
+    public static class GamePad {
         public static final int DRIVER_CONTROLLER_PORT = 0;
         public static final int OPERATOR_CONTROLLER_PORT = 1;
-        public static final double DRIVER_STICK_DEADZONE = 0.05;//TODO::FIX
-        public static final double OPERATOR_STICK_DEADZONE = 0.2;//TODO::FIX
+        public static final double DRIVER_STICK_DEAD_ZONE = 0.05;
+        public static final double OPERATOR_STICK_DEAD_ZONE = 0.2;
     }
 
     public static double LOOP_TYPE_SECONDS = 0.02;
@@ -15,11 +15,11 @@ public final class DroidRageConstants {
     }
 
     public static double applyDeadBand(double value) {
-        if (Math.abs(value) < DroidRageConstants.Gamepad.OPERATOR_STICK_DEADZONE) value = 0;
+        if (Math.abs(value) < DroidRageConstants.GamePad.OPERATOR_STICK_DEAD_ZONE) value = 0;
         return value;
     }
 
-    public static boolean isWithinDeadzone(double stick) {
-        return Math.abs(stick) < DroidRageConstants.Gamepad.OPERATOR_STICK_DEADZONE;
+    public static boolean isWithinDeadZone(double stick) {
+        return Math.abs(stick) < DroidRageConstants.GamePad.OPERATOR_STICK_DEAD_ZONE;
     }
 }
